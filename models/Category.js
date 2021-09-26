@@ -16,8 +16,11 @@ Category.init(
     //define a catagory_name column
     catagory_name: {
       type:DataTypes.STRING,
-      allowNull: false
-    }
+      allowNull: false,
+      validate: {
+        len:[1],
+      },
+    },
   },
   {
     sequelize,
