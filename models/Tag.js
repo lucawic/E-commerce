@@ -10,13 +10,16 @@ Tag.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
-      autoIncrement: true
     },
-    //define tag_name column
     tag_name: {
-      type: DataTypes.STRING
-    }
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
+    },
   },
   {
     sequelize,
